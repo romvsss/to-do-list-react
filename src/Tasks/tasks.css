@@ -1,0 +1,77 @@
+.taskList__buttons {
+    flex-basis: 60%;
+    display: flex;
+    justify-content: end;
+    flex-direction: row-reverse;
+    margin: 20px;
+}
+
+@media (max-width: 767px) {
+    .taskList__buttons {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+}
+
+.taskList--ul {
+    padding-left: 0px;
+    max-width: 90%;
+    margin: auto;
+}
+
+.taskList--li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.taskList--remove {
+    width: 40px;
+    height: 40px;
+    background-color: hsl(0, 100%, 33%);
+    color: #ccc;
+    transition: 1s;
+}
+
+.taskList--remove:hover {
+    background: hsl(0, 100%, 50%);
+}
+
+.taskList--toggle {
+    width: 40px;
+    height: 40px;
+    background-color: hsl(120, 42%, 36%);
+    transition: 1s;
+}
+
+.taskList--toggle:hover {
+    background-color: hsl(120, 42%, 50%);
+}
+
+.taskList--img {
+    width: 50px;
+    color: #ccc;
+}
+
+.taskList--imgDone {
+    display: none;
+}
+
+.taskList--text {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 1000;
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+.taskList--textDone {
+    text-decoration: line-through;
+}
+
+.taskList--hiddenItems {
+    display: none;
+}

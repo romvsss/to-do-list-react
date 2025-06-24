@@ -1,0 +1,25 @@
+.markAllButton {
+    border: none;
+    background-color: #fff;
+    transition: 1s;
+    color: teal;
+}
+
+.markAllButton:hover {
+    color: rgb(0, 160, 160);
+}
+
+.markAllButton:disabled {
+    color: #ccc;
+}
+
+.hideAllDoneButton {
+    border: none;
+    background-color: #fff;
+    transition: 1s;
+    color: teal;
+}
+
+.hideAllDoneButton:hover {
+    color: rgb(0, 160, 160);
+}
