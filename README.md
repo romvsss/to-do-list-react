@@ -2,7 +2,7 @@
 
 ![demoGif](readme/gif.gif)
 
-# DEMO: https://romvsss.github.io/toDoList/
+# DEMO: https://romvsss.github.io/to-do-list-react/
 
 ## Description
 
