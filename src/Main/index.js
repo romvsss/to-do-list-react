@@ -1,9 +1,9 @@
-import "./main.css"
+import "./main.css";
 
-const Main = (props) => (
+const Main = ({ children }) => (
     <main className="main">
-        {props.children}
+        {children}
     </main>
 );
 
-export default Main
+export default Main;

@@ -1,25 +1,39 @@
-.markAllButton {
-    border: none;
-    background-color: #fff;
-    transition: 1s;
-    color: teal;
+.buttons {
+    display: flex;
+    justify-content: end;
+    margin: 20px 0;
+    gap: 10px;
+    padding-right: 20px;
 }
 
-.markAllButton:hover {
+.buttons__button {
+    border: none;
+    background-color: transparent;
+    transition: 0.3s;
+    color: teal;
+    padding: 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.buttons__button:hover {
     color: rgb(0, 160, 160);
 }
 
-.markAllButton:disabled {
+.buttons__button:disabled {
     color: #ccc;
+    cursor: not-allowed;
 }
 
-.hideAllDoneButton {
-    border: none;
-    background-color: #fff;
-    transition: 1s;
-    color: teal;
-}
-
-.hideAllDoneButton:hover {
-    color: rgb(0, 160, 160);
+@media (max-width: 767px) {
+    .buttons {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-right: 0;
+    }
+    
+    .buttons__button {
+        margin: 2px 0;
+    }
 }

@@ -1,30 +1,29 @@
-
-.newTask--headerText {
+.newTask__headerText {
     padding: 25px;
     margin: 0;
     border-bottom: 2px solid #ddd;
 }
 
 @media (max-width: 767px) {
-    .newTask--headerText {
+    .newTask__headerText {
         padding: 10px;
         padding-bottom: 10px;
     }
 }
 
-.newTask--form {
+.newTask__form {
     display: flex;
     padding: 20px;
     margin: auto;
 }
 
 @media (max-width: 767px) {
-    .newTask--form {
+    .newTask__form {
         flex-wrap: wrap;
     }
 }
 
-.newTask--input {
+.newTask__input {
     border: solid 1px gray;
     flex-basis: 85%;
     margin: 7px;
@@ -33,13 +32,13 @@
 }
 
 @media (max-width: 767px) {
-    .newTask--input {
+    .newTask__input {
         flex-basis: 100%;
         padding: 5px;
     }
 }
 
-.newTask--button {
+.newTask__button {
     flex-basis: 15%;
     border: solid 1px gray;
     margin: 7px;
@@ -50,14 +49,14 @@
     font-size: 18px;
 }
 
-.newTask--button:hover {
+.newTask__button:hover {
     transform: scale(1.3);
     background-color: rgb(0, 153, 153);
 }
 
 @media (max-width: 767px) {
-    .newTask--button {
+    .newTask__button {
         flex-basis: 100%;
-        padding: 10px
+        padding: 10px;
     }
 }

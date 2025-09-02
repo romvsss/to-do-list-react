@@ -1,21 +1,23 @@
-import './buttons.css'
+import "./buttons.css";
 
-const Buttons = (props) => {
-    if (props.tasks.length === 0) {
+const Buttons = ({ tasks, hideDoneTasks }) => {
+    if (tasks.length === 0) {
         return null;
     }
+
     return (
-        <div className="taskList__buttons">
-            <button className="markAllButton"
-                disabled={props.tasks.every(({ done }) => done)}
+        <div className="buttons">
+            <button
+                className="buttons__button"
+                disabled={tasks.every(({ done }) => done)}
             >
                 Ukończ wszystkie
             </button>
-            <button className="hideAllDoneButton">
-                {props.hideDoneTasks ? "Pokaż" : "Ukryj"} wszystkie ukończone
+            <button className="buttons__button">
+                {hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
             </button>
         </div>
-    )
-}
+    );
+};
 
-export default Buttons 
+export default Buttons;
