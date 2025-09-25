@@ -29,10 +29,10 @@
     .buttons {
         flex-wrap: wrap;
         flex-direction: column;
-        align-items: flex-end;
+        align-items: center;
         padding-right: 0;
     }
-    
+
     .buttons__button {
         margin: 2px 0;
     }
