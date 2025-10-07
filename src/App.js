@@ -1,20 +1,24 @@
 import './index.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Form from './Form'
 import Tasks from './Tasks'
 import Buttons from './Buttons'
 import Section from './Section'
 import Main from './Main'
 
-const defaultTasks = [
-  { id: 1, content: "Nauczyć się React", done: false },
-  { id: 2, content: "Zrobić zakupy", done: true },
-  { id: 3, content: "Przeczytać książkę", done: false }
-];
+const defaultTasks = [];
 
 function App() {
   const [hideDone, setHideDone] = useState(false);
-  const [tasks, setTasks] = useState(defaultTasks)
+
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem('tasks');
+    return savedTasks ? JSON.parse(savedTasks) : defaultTasks;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
 
   const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone)
@@ -58,9 +62,9 @@ function App() {
         <Section
           title="Dodaj nowe zadanie"
           body={
-            <Form 
+            <Form
               addNewTask={addNewTask}
-          />} />
+            />} />
 
         <Section
           title="Lista zadań"
@@ -75,8 +79,8 @@ function App() {
             <Buttons
               tasks={tasks}
               hideDone={hideDone}
-              toggleHideDone={toggleHideDone} 
-              setAllDone={setAllDone}/>} />
+              toggleHideDone={toggleHideDone}
+              setAllDone={setAllDone} />} />
 
       </Main>
     </>
