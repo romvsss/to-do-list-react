@@ -1,31 +1,28 @@
-import './index.css';
-import { useState } from 'react';
 import Form from './Form'
 import Tasks from './Tasks'
 import Buttons from './Buttons'
 import Section from './Section'
 import Main from './Main'
 import { useTasks } from './useTasks';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyles } from './globalStyles';
+import { theme } from './theme';
 
 function App() {
 
-  const [hideDone, setHideDone] = useState(false);
-
   const {
     tasks,
+    hideDone,
     removeTask,
     toggleTaskDone,
     setAllDone,
     addNewTask,
+    toggleHideDone,
   } = useTasks();
 
-  const toggleHideDone = () => {
-    setHideDone(hideDone => !hideDone)
-  };
-
-
   return (
-    <>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
       <Main>
         <header>
           <h1>Lista zadań</h1>
@@ -55,7 +52,7 @@ function App() {
               setAllDone={setAllDone} />} />
 
       </Main>
-    </>
+    </ThemeProvider>
   );
 }
 
