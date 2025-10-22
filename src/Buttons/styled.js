@@ -6,7 +6,7 @@ export const StyledButtons = styled.div`
   margin: 20px 0;
   padding: 0 10px;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: flex-start;
@@ -18,7 +18,7 @@ export const Button = styled.button`
   border: none;
   background-color: transparent;
   transition: 0.3s;
-  color: teal;
+  color: ${({ theme }) => theme.colors.color};
   padding: 8px 16px;
   cursor: pointer;
   font-size: 15px;
@@ -34,7 +34,7 @@ export const Button = styled.button`
     background-color: transparent;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin: 2px 0;
   }
 `;

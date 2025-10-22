@@ -8,9 +8,9 @@ export const StyledSection = styled.section`
 export const Header = styled.div`
     display: flex;
     justify-content: space-between;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid ${({ theme }) => theme.colors.background};
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         display: flex;
         flex-direction: column;
 };
@@ -19,7 +19,7 @@ export const Title = styled.h2`
     padding: 25px;
     margin: 0;
 
-@media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         padding: 10px;
         border-bottom: 1px solid #ccc;
 }

@@ -11,7 +11,7 @@ export const Item = styled.li`
     display: flex;
     align-items: center;
     padding: 10px 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.background};
 
     ${({hidden}) => hidden && css`
         display: none;
@@ -23,7 +23,7 @@ export const Button = styled.button`
     width: 40px;
     height: 40px;
     background-color: hsl(0, 100%, 33%);
-    color: #ccc;
+    color: ${({ theme }) => theme.colors.background};
     transition: 1s;
     border: none;
     cursor: pointer;
