@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 export const List = styled.ul`
@@ -13,13 +14,13 @@ export const Item = styled.li`
     padding: 10px 0;
     border-bottom: 1px solid ${({ theme }) => theme.colors.background};
 
-    ${({hidden}) => hidden && css`
+    ${({ hidden }) => hidden && css`
         display: none;
     `};
 `;
 
 export const Button = styled.button`
-    ${({remove}) => remove && css`
+    ${({ remove }) => remove && css`
     width: 40px;
     height: 40px;
     background-color: hsl(0, 100%, 33%);
@@ -33,7 +34,7 @@ export const Button = styled.button`
     };
     `};
 
-    ${({toggle}) => toggle && css`
+    ${({ toggle }) => toggle && css`
     width: 40px;
     height: 40px;
     background-color: hsl(120, 42%, 36%);
@@ -55,7 +56,18 @@ export const Content = styled.span`
     padding: 0 10px;
     overflow: hidden;
 
-    ${({done}) => done && css`
+    ${({ done }) => done && css`
     text-decoration: line-through;
     `};
+`;
+
+export const StyledLink = styled(Link)`
+    color: ${({ theme }) => theme.colors.color};
+    text-decoration: none;
+    transition: filter 0.3s;
+    padding: 10px;
+
+    &:hover {
+        filter: brightness(1.2);
+    }
 `;

@@ -1,30 +1,36 @@
-import Section from '../../../common/Section'
-import Main from '../../../common/Main'
-import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { getTaskById } from '../tasksSlice';
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import Main from "../../../common/Main";
+import Section from "../../../common/Section";
+import { getTaskById } from "../tasksSlice";
 
 function TaskPage() {
+    const { id } = useParams();
+    const task = useSelector(state => getTaskById(state, id));
 
-    const { id } = useParams()
-    const task = useSelector(state => getTaskById(state, id))
+    if (!task) {
+        return (
+            <Main>
+                <Section
+                    title="Nie znaleziono zadania!"
+                    body="Wróć do listy zadań i spróbuj ponownie."
+                />
+            </Main>
+        );
+    }
 
     return (
         <Main>
-            <header>
-                <h1>Szczegóły zadania</h1>
-            </header>
-
             <Section
-                title={task ? task.content : "Nie znaleziono zadania"}
+                title={task.content}
                 body={
                     <>
-                        <strong>Ukończono: </strong> {task.done ? "Tak" : "Nie"}
+                        <strong>Ukończono:</strong> {task.done ? "Tak" : "Nie"}
                     </>
-                } />
-
+                }
+            />
         </Main>
     );
-}
+};
 
 export default TaskPage;
