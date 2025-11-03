@@ -1,31 +1,20 @@
-import TasksPage from "./features/tasks/TasksPage/index";
-import AuthorPage from "./features/author/AuthorPage"
-import { HashRouter, Link, Routes, Route, Navigate } from "react-router-dom"
-import TaskPage from "./features/tasks/TaskPage/index";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
+import AuthorPage from "./features/author/AuthorPage";
+import TasksPage from "./features/tasks/TasksPage";
+import TaskPage from "./features/tasks/TaskPage";
+import Navigation from "./common/Navigation";
 
 export const App = () => (
     <HashRouter>
-        <nav>
-            <ul>
-                <li>
-                    <Link to="/zadania">
-                        Zadania
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/autor">
-                        O autorze
-                    </Link>
-                </li>
-            </ul>
-            <Routes>
-                <Route path="/zadania/:id" element={<TaskPage />} />
-                <Route path="/zadania" element={<TasksPage />} />
-                <Route path="/autor" element={<AuthorPage />} />
-                <Route path="/" element={<Navigate to="/zadania" />} />
-            </Routes>
-        </nav>
+        <Navigation />
+
+        <Routes>
+            <Route path="/tasks/:id" element={<TaskPage />} />
+            <Route path="/tasks" element={<TasksPage />} />
+            <Route path="/author" element={<AuthorPage />} />
+            <Route path="/" element={<Navigate to="/tasks" />} />
+        </Routes>
     </HashRouter>
-)
+);
 
 export default App;
