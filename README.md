@@ -6,7 +6,13 @@
 
 ## Description
 
-This is a simple web application that allows you to add new tasks, mark them as done, or remove them. You can also mark all tasks as done and hide completed ones.
+This is a To-Do List application built with React. It allows you to add new tasks, mark them as done, remove them, and hide completed tasks. 
+
+The application features:
+* **Routing** with separate pages for the task list, task details, and an author page (using `react-router-dom`).
+* **Task filtering** based on URL search parameters.
+* **Asynchronous fetching** of example tasks (using `redux-saga`).
+* **Persistent state** with all tasks saved in the browser's Local Storage.
 
 ## Available Scripts
 
@@ -33,10 +39,13 @@ Your app is ready to be deployed!
 
 ## Technologies
 
-- HTML5
-- CSS3 (with BEM methodology)
-- JavaScript (ES6+)
-- React Hooks
-- Create React App
-- Styled-components
-- Git & GitHub
+-   HTML5
+-   CSS3
+-   JavaScript (ES6+)
+-   React (Hooks)
+-   React Router
+-   Redux Toolkit
+-   Redux Saga
+-   Styled-components
+-   Create React App
+-   Git & GitHub
