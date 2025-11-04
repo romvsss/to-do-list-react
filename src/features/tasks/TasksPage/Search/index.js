@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { Input} from "../../StyledForm"
+import { Input } from "../../Input"
 import { Wrapper } from "./style";
 
 // eslint-disable-next-line import/no-anonymous-default-export
